@@ -1,14 +1,13 @@
 import fetcher from "./fetcher";
 
 const userApi = {
-    getUser: async (value) => {
-        return fetcher.get("QuanLyNguoiDung/LayDanhSachNguoiDung", {
-            params: {
-                tuKhoa: value,
-            },
-        });
-    },
-
+  getUser: async (tuKhoa) => {
+    return fetcher.get("QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01", {
+      params: {
+        ...tuKhoa,
+      },
+    });
+  },
 };
 
 export default userApi;
